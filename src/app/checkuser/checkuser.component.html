@@ -1,0 +1,30 @@
+<p>
+  
+</p>
+
+<div class="container">
+    <h1 class="text-secondary">Check user </h1>
+    <form [formGroup]="checkForm"  (ngSubmit)="checkUser()">
+      <div class="form-group" >
+        <label class="text-secondary">User name</label>
+        <input type="text" class="form-control" formControlName="name" placeholder="Enter name">
+       
+      </div>
+      
+      <button type="submit" class="btn btn-primary mb-2" >Check</button>
+      <br/>
+      <button type="button" class="btn btn-secondary mb-2"  onClick="history.go(0)" >Clear</button>
+  </form>
+  <br>
+     
+      <div *ngIf="err!=null">
+        <span class="text-danger">{{err}}</span>
+      </div>
+      <div *ngIf="suc!=null" >
+        <div>
+            <span class="text-success">{{suc.name}} found</span>
+        </div>
+        
+      </div>
+</div>
+
